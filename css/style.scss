@@ -1,0 +1,85 @@
+/* Reset CSS */
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+/* Fin du reset */
+
+/* Ajout de la police */
+@font-face {
+  font-family: "Questrial";
+  src: url("elements/Questrial-Regular.ttf") format("ttf");
+}
+
+body {
+  font-family: "Questrial", sans-serif;
+}
+
+/* Gestion de la navbar */
+header {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100vw;
+  padding-left: 7rem;
+  padding-right: 8rem;
+  padding-top: 2rem;
+
+  ul {
+    display: flex;
+    align-items: center;
+    li {
+      margin-right: 2rem;
+      a {
+        text-decoration: none;
+        color: #363636;
+      }
+    }
+    li:nth-of-type(4) {
+      margin-right: 0;
+      margin-left: 1.5rem;
+      border-radius: 1.25rem;
+      padding-left: 2.25rem;
+      padding-right: 2.25rem;
+      padding-top: 0.8rem;
+      padding-bottom: 0.8rem;
+      background-color: #3f3d56;
+      a{
+        color: white;
+      }
+    }
+  }
+}
+
+/* Style de la partie introduction */
+
