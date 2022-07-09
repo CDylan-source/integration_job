@@ -109,23 +109,14 @@ header {
       margin-bottom: 2.5rem;
       max-width: 300px;
     }
-    button {
-      background-color: #3f3d56;
-      color: white;
-      font-size: 1rem;
-      border-radius: 1.5rem;
-      padding-left: 2.25rem;
-      padding-right: 2.25rem;
-      padding-top: 0.8rem;
-      padding-bottom: 0.8rem;
-      border: none;
-      margin-bottom: 4.9rem;
-    }
     ul {
       display: flex;
       width: 7.5rem;
       justify-content: space-between;
       align-items: center;
+    }
+    button {
+      margin-bottom: 4.9rem;
     }
   }
   #intro-droite {
@@ -138,6 +129,17 @@ header {
     overflow: hidden;
   }
 }
+button {
+  background-color: #3f3d56;
+  color: white;
+  font-size: 1rem;
+  border-radius: 1.5rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  border: none;
+}
 
 /* Placement de la première illustration */
 #illu-gauche {
@@ -149,15 +151,19 @@ header {
   }
 }
 
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.875rem;
+  text-align: center;
+}
+
 /* Style de la deuxième section */
 #things_i_do {
   padding-top: 15rem;
   padding-left: 10vw;
   padding-right: 11vw;
+  margin-bottom: 8.25rem;
   h2 {
-    font-family: "Roboto", sans-serif;
-    font-size: 1.875rem;
-    text-align: center;
     margin-bottom: 3rem;
   }
   div {
@@ -200,19 +206,71 @@ header {
     padding-top: 6.7rem;
   }
 }
-  #things_i_do > div:nth-of-type(3) {
-    img {
-      width: 32vw;
-      max-width: 443px;
-    }
-    article {
-      padding-top: 1.25rem;
-    }
+#things_i_do > div:nth-of-type(3) {
+  img {
+    width: 32vw;
+    max-width: 443px;
   }
+  article {
+    padding-top: 1.25rem;
+  }
+}
 
-#things_i_do>img{
+/* Placement de la deuxième illustration */
+#illu-droite {
   position: relative;
   z-index: -1;
-  top: -50px;
-  right: 0;
+  img {
+    position: absolute;
+    top: -36.125rem;
+    right: 0;
+  }
+}
+
+/* Placement de la troisième illustration */
+#illu-gauche-petite {
+  position: relative;
+  z-index: -1;
+  img {
+    position: absolute;
+    left: 0;
+    top: 9.8rem;
+  }
+}
+
+/* Style de la section Recent Work */
+#recent_work {
+  padding-left: 10.6vw;
+  padding-right: 11.8vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2{
+    margin-bottom: 3.4rem;
+  }
+  ul{
+    display: grid;
+    grid-template-columns: 1fr min(34.7vw, 475px) min(34.7vw, 475px) 1fr;
+    gap: 3.2rem;
+    margin-bottom: 5.25rem;
+    li:nth-of-type(odd){
+      position: relative;
+      top: 3.5rem;
+      grid-column: 2/3;
+    }
+    li:nth-of-type(even){
+      grid-column: 3/4;
+    }
+  }
+}
+
+/* Placement de la quatrième illustration */
+#illu-droite-petite {
+  position: relative;
+  z-index: -1;
+  img {
+    position: absolute;
+    right: 0;
+    top: -40.875rem;
+  }
 }
