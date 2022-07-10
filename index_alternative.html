@@ -11,6 +11,10 @@
       type="image/svg+xml"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"
+      defer
+    ></script>
     <script src="js/app.js" defer></script>
     <title>Lisa's World</title>
   </head>
@@ -22,7 +26,7 @@
 
       <!-- Ancres -->
       <ul id="menu">
-        <li><a href="#recent_work">Work</a></li>
+        <li><a href="#recent_work_alternative">Work</a></li>
         <li><a href="#introduction">About</a></li>
         <li><a href="#things_i_do">Resume</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -135,34 +139,36 @@
       </div>
 
       <!-- Début de la section Recent Work -->
-      <section id="recent_work">
+      <section id="recent_work_alternative">
         <h2>Recent Work</h2>
-        <ul>
-          <li>
-            <img
-              src="elements/project1.jpg"
-              alt="Un sac de course en coton sur fond vert-turquoise"
-            />
-          </li>
-          <li>
-            <img
-              src="elements/project2.jpg"
-              alt="Une assiette jaune pleine de sauce sur fond vert-turquoise"
-            />
-          </li>
-          <li>
-            <img
-              src="elements/project3.jpg"
-              alt="Une femme vue de haut, au bord d'une piscine, portant un large chapeau"
-            />
-          </li>
-          <li>
-            <img
-              src="elements/project4.jpg"
-              alt="Une cochon de verre contenant une sorte de miniscule forêt"
-            />
-          </li>
-        </ul>
+        <div class="menu">
+          <ul class="menu--wrapper">
+            <li class="menu--item">
+              <img
+                src="elements/project1.jpg"
+                alt="Un sac de course en coton sur fond vert-turquoise"
+              />
+            </li>
+            <li class="menu--item">
+              <img
+                src="elements/project2.jpg"
+                alt="Une assiette jaune pleine de sauce sur fond vert-turquoise"
+              />
+            </li>
+            <li class="menu--item">
+              <img
+                src="elements/project3.jpg"
+                alt="Une femme vue de haut, au bord d'une piscine, portant un large chapeau"
+              />
+            </li>
+            <li class="menu--item">
+              <img
+                src="elements/project4.jpg"
+                alt="Une cochon de verre contenant une sorte de miniscule forêt"
+              />
+            </li>
+          </ul>
+        </div>
         <button>View Work</button>
       </section>
 
