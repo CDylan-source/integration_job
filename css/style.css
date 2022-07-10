@@ -3,6 +3,7 @@
 html {
   box-sizing: border-box;
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -35,22 +36,23 @@ ul {
 /* Ajout des polices */
 @font-face {
   font-family: "Questrial";
-  src: url("elements/Questrial-Regular.ttf") format("ttf");
+  src: url("../elements/Questrial-Regular.ttf") format("ttf");
 }
 @font-face {
   font-family: "Roboto";
-  src: url("elements/Roboto-Bold.ttf");
+  src: url("../elements/Roboto-Bold.ttf");
   font-weight: bold;
 }
 body {
   font-family: "Questrial", sans-serif;
   color: #363636;
+  overflow: overlay;
 }
 
 /* Gestion de la navbar */
 header {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   position: fixed;
@@ -58,19 +60,22 @@ header {
   padding-left: 8vw;
   padding-right: 10vw;
   padding-top: 2rem;
+  z-index: 1;
 }
-header ul {
+header #menu {
   display: flex;
   align-items: center;
 }
-header ul li {
+header #menu li {
   margin-right: 2rem;
+  cursor: pointer;
+  transition-duration: 0.5s;
 }
-header ul li a {
+header #menu li a {
   text-decoration: none;
   color: #363636;
 }
-header ul li:nth-of-type(4) {
+header #menu li:nth-of-type(4) {
   margin-right: 0;
   margin-left: 1.5rem;
   border-radius: 1.5rem;
@@ -80,8 +85,11 @@ header ul li:nth-of-type(4) {
   padding-bottom: 0.8rem;
   background-color: #3f3d56;
 }
-header ul li:nth-of-type(4) a {
+header #menu li:nth-of-type(4) a {
   color: white;
+}
+header #menu li:hover {
+  font-size: 1.2rem;
 }
 
 /* Style de la partie introduction */
@@ -137,6 +145,7 @@ button {
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
   border: none;
+  cursor: pointer;
 }
 
 /* Placement de la première illustration */
@@ -160,7 +169,6 @@ h2 {
   padding-top: 15rem;
   padding-left: 10vw;
   padding-right: 11vw;
-  margin-bottom: 8.25rem;
 }
 #things_i_do h2 {
   margin-bottom: 3rem;
@@ -236,6 +244,7 @@ h2 {
 /* Style de la section Recent Work */
 #recent_work {
   padding-left: 10.6vw;
+  padding-top: 8.25rem;
   padding-right: 11.8vw;
   display: flex;
   flex-direction: column;
@@ -246,8 +255,7 @@ h2 {
 }
 #recent_work ul {
   display: grid;
-  grid-template-columns: 1fr min(34.7vw, 475px) min(34.7vw, 475px) 1fr;
-  gap: 3.2rem;
+  grid-template-columns: 1fr min(34.7vw, 475px) 55px min(34.7vw, 475px) 1fr;
   margin-bottom: 5.25rem;
 }
 #recent_work ul li:nth-of-type(odd) {
@@ -256,7 +264,15 @@ h2 {
   grid-column: 2/3;
 }
 #recent_work ul li:nth-of-type(even) {
-  grid-column: 3/4;
+  grid-column: 4/5;
+}
+#recent_work ul li:nth-of-type(1),
+#recent_work ul li:nth-of-type(2) {
+  margin-bottom: 55px;
+}
+#recent_work ul li img {
+  width: 34.7vw;
+  max-width: 475px;
 }
 
 /* Placement de la quatrième illustration */
@@ -268,4 +284,260 @@ h2 {
   position: absolute;
   right: 0;
   top: -40.875rem;
+}
+
+/* Style de la partie contact */
+#contact {
+  display: flex;
+  padding-left: 12vw;
+  position: relative;
+  min-height: 53.7rem;
+  margin-bottom: 12.5rem;
+}
+#contact #contact-gauche h2 {
+  font-size: 2.125rem;
+  max-width: 320px;
+  text-align: left;
+  margin-top: 4rem;
+  margin-bottom: 2.5rem;
+}
+#contact #contact-gauche form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 40vw;
+}
+#contact #contact-gauche form #nom_complet {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+#contact #contact-gauche form #nom,
+#contact #contact-gauche form #prenom,
+#contact #contact-gauche form #email,
+#contact #contact-gauche form #sujet,
+#contact #contact-gauche form #message {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(84, 177, 146, 0.15);
+  padding: 0.4rem;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+#contact #contact-gauche form #nom,
+#contact #contact-gauche form #prenom {
+  width: calc(50% - 0.25rem);
+  min-width: 250px;
+}
+#contact #contact-gauche form input,
+#contact #contact-gauche form textarea {
+  padding: 0.3rem;
+  border-radius: 4px;
+  border: none;
+  margin-top: 0.2rem;
+  background-color: rgba(84, 177, 146, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.05);
+  color: #3f3d56;
+  transition: color 0.3s ease-out;
+  transition: background-color 0.4s ease-out;
+  font-size: 1rem;
+}
+#contact #contact-gauche form input::-webkit-input-placeholder {
+  color: #b8b8b8;
+  font-family: "Questrial", sans-serif;
+  font-size: 1rem;
+}
+#contact #contact-gauche form textarea {
+  resize: none;
+}
+#contact #contact-gauche form input:focus,
+#contact #contact-gauche form textarea:focus {
+  outline: none;
+  background-color: white;
+}
+#contact #contact-gauche form button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-bottom: 4rem;
+}
+#contact #contact-gauche ul {
+  display: flex;
+  width: 7.5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+#contact #contact-droite {
+  position: absolute;
+  z-index: -1;
+  top: -7.25rem;
+  right: 0;
+  width: 40vw;
+  max-width: 683px;
+  overflow: hidden;
+}
+
+#illu-gauche-bas {
+  position: relative;
+  z-index: -1;
+}
+#illu-gauche-bas img {
+  position: absolute;
+  top: -24rem;
+}
+
+/* Style scrollbar */
+body::-webkit-scrollbar {
+  width: 12px;
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #363636;
+}
+
+/* Fixer les ancres */
+/* Responsive */
+@media (max-width: 750px) {
+  #illu-gauche img,
+#illu-droite img,
+#illu-gauche-bas img {
+    max-width: 20vw;
+  }
+  #illu-gauche-petite img,
+#illu-droite-petite img {
+    max-width: 15vw;
+  }
+  #introduction {
+    justify-content: center;
+    padding-left: 0;
+  }
+  #introduction #intro-gauche {
+    padding-top: 0;
+    margin-top: 6rem;
+    padding-left: 0;
+    padding: 1rem;
+    max-width: 80vw;
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    background-color: rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+  }
+  #introduction #intro-droite {
+    width: 100vw;
+  }
+  #things_i_do {
+    padding-top: 10rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #things_i_do div {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  #things_i_do div article h3 {
+    text-align: center;
+  }
+  #things_i_do > div:nth-of-type(1) img {
+    width: 80vw;
+  }
+  #things_i_do > div:nth-of-type(1) article {
+    padding-top: 2rem;
+  }
+  #things_i_do > div:nth-of-type(2) img {
+    width: 80vw;
+  }
+  #things_i_do > div:nth-of-type(2) article {
+    padding-top: 2rem;
+  }
+  #things_i_do > div:nth-of-type(3) img {
+    width: 80vw;
+  }
+  #things_i_do > div:nth-of-type(3) article {
+    padding-top: 2rem;
+  }
+  #contact {
+    padding-left: 0;
+    justify-content: center;
+    margin-bottom: 8rem;
+    padding-top: 6rem;
+  }
+  #contact #contact-gauche {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #contact #contact-gauche h2 {
+    text-align: center;
+  }
+  #contact #contact-gauche form {
+    gap: 1.5rem;
+    width: 80vw;
+  }
+  #contact #contact-gauche form #nom,
+#contact #contact-gauche form #prenom,
+#contact #contact-gauche form #email,
+#contact #contact-gauche form #sujet,
+#contact #contact-gauche form #message {
+    background-color: rgba(255, 255, 255, 0.4);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+  }
+  #contact #contact-gauche form input,
+#contact #contact-gauche form textarea {
+    background-color: rgba(255, 255, 255, 0.4);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    color: #3f3d56;
+    transition: color 0.3s ease-out;
+    transition: background-color 0.4s ease-out;
+    font-size: 1rem;
+  }
+  #contact #contact-gauche button {
+    align-self: center;
+  }
+  #contact #contact-droite {
+    width: 100vw;
+  }
+  header {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+  header #menu li {
+    margin-right: 0.8rem;
+  }
+  header #menu li:nth-of-type(4) {
+    margin-left: 0rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  header #menu li:hover {
+    font-size: 1rem;
+  }
 }/*# sourceMappingURL=style.css.map */

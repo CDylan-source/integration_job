@@ -20,11 +20,11 @@
       <img src="elements/logo.svg" alt="Le logo du site" />
 
       <!-- Ancres -->
-      <ul>
-        <li><a href="#">Work</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Resume</a></li>
-        <li><a href="#">Contact</a></li>
+      <ul id="menu">
+        <li><a href="#recent_work">Work</a></li>
+        <li><a href="#introduction">About</a></li>
+        <li><a href="#things_i_do">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </header>
     <main>
@@ -170,7 +170,86 @@
         <img src="elements/right-leave.svg" alt="Une illustration de feuille" />
       </div>
 
-      
+      <!-- Dernière section -->
+      <section id="contact">
+        <div id="contact-gauche">
+          <h2>Ready to make something amazing?</h2>
+          <form action="">
+            <div id="nom_complet">
+              <div id="nom">
+                <label for="lastname">Last name</label>
+                <input
+                  type="text"
+                  name="lastname"
+                  placeholder="Last name"
+                  required
+                />
+              </div>
+              <div id="prenom">
+                <label for="firstname">First name</label>
+                <input
+                  type="text"
+                  name="firstname"
+                  placeholder="First name"
+                  required
+                />
+              </div>
+            </div>
+            <div id="sujet">
+              <label for="subject">Subject</label>
+              <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                required
+              />
+            </div>
+            <div id="email">
+              <label for="mail">Mail address</label>
+              <input
+                type="text"
+                name="mail"
+                placeholder="Mail address"
+                required
+              />
+            </div>
+            <div id="message">
+              <label for="message">Message</label>
+              <textarea name="message" cols="30" rows="10"></textarea>
+            </div>
+            <button type="submit">Start a New Project</button>
+          </form>
+          <ul>
+            <li>
+              <a href="#"
+                ><img src="elements/dribbble.svg" alt="Le logo de Dribbble"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="elements/behance.svg" alt="Le logo de Behance"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="elements/linkedin.svg" alt="Le logo de LinkedIn"
+              /></a>
+            </li>
+          </ul>
+        </div>
+        <div id="contact-droite">
+          <img
+            src="elements/illustration-footer.svg"
+            alt="Un dessin minimaliste représentant Lisa au téléphone devant son ordinateur"
+          />
+        </div>
+      </section>
+      <div id="illu-gauche-bas">
+        <img
+          src="elements/big-left-leave.svg"
+          alt="Une illustration de feuilles"
+        />
+      </div>
     </main>
   </body>
 </html>
